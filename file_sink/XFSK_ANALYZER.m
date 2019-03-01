@@ -44,12 +44,23 @@ RX_data=Datastring;
 %plot(real(data_IQ)%
 %grid
 
+figure(1)
+subplot(2,1,1)
+plot(TX_data) % (1:1199)
+grid
+legend('TX data')
+subplot(2,1,2)
+stem(RX_data(1:1199))
+legend('RX data')
+%plot(real(IQ(1000:1299))) % (1000:1100)
+%plot(imag(IQ(1000:1299))
+grid
+
 figure(2)
-plot(RX_data(1000:1999))
+%plot(TX_data(1000:1099)) % (1000:1100)
 hold
-plot(TX_data(1000:1999)) % (1000:1100)
-%plot(real(IQ(1000:1999))) % (1000:1100)
-%plot(imag(IQ(1000:1999)))
-legend('RX data','TX data','RX real','RX imag')
+plot(abs(IQ(1000:1199))) % (1000:1100)
+%plot((IQ(1000:1099)))
+legend('RX abs','RX imag') % 'TX data',
 grid
 
