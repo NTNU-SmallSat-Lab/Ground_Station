@@ -4,7 +4,7 @@
 # GNU Radio Python Flow Graph
 # Title: X_FSK
 # Author: Erik Buer
-# Generated: Fri Mar  1 10:32:18 2019
+# Generated: Thu Mar 14 13:00:46 2019
 ##################################################
 
 if __name__ == '__main__':
@@ -122,7 +122,7 @@ class X_FSK(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0.pyqwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_0_win)
-        self.qtgui_sink_x_0_0_0_0 = qtgui.sink_c(
+        self.qtgui_sink_x_0_0_0_0_0 = qtgui.sink_c(
         	1024, #fftsize
         	firdes.WIN_BLACKMAN_hARRIS, #wintype
         	0, #fc
@@ -133,30 +133,11 @@ class X_FSK(gr.top_block, Qt.QWidget):
         	True, #plottime
         	True, #plotconst
         )
-        self.qtgui_sink_x_0_0_0_0.set_update_time(1.0/10)
-        self._qtgui_sink_x_0_0_0_0_win = sip.wrapinstance(self.qtgui_sink_x_0_0_0_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_sink_x_0_0_0_0_win)
+        self.qtgui_sink_x_0_0_0_0_0.set_update_time(1.0/10)
+        self._qtgui_sink_x_0_0_0_0_0_win = sip.wrapinstance(self.qtgui_sink_x_0_0_0_0_0.pyqwidget(), Qt.QWidget)
+        self.top_grid_layout.addWidget(self._qtgui_sink_x_0_0_0_0_0_win)
 
-        self.qtgui_sink_x_0_0_0_0.enable_rf_freq(False)
-
-
-
-        self.qtgui_sink_x_0_0 = qtgui.sink_c(
-        	1024, #fftsize
-        	firdes.WIN_BLACKMAN_hARRIS, #wintype
-        	0, #fc
-        	samp_rate, #bw
-        	"", #name
-        	True, #plotfreq
-        	True, #plotwaterfall
-        	True, #plottime
-        	True, #plotconst
-        )
-        self.qtgui_sink_x_0_0.set_update_time(1.0/10)
-        self._qtgui_sink_x_0_0_win = sip.wrapinstance(self.qtgui_sink_x_0_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_sink_x_0_0_win)
-
-        self.qtgui_sink_x_0_0.enable_rf_freq(False)
+        self.qtgui_sink_x_0_0_0_0_0.enable_rf_freq(False)
 
 
 
@@ -167,20 +148,13 @@ class X_FSK(gr.top_block, Qt.QWidget):
         self.digital_clock_recovery_mm_xx_0 = digital.clock_recovery_mm_ff(SYMB_LEN*(1+0.0), 0.25*0.175*0.175, 0.5, 0.175, 0.005)
         self.digital_binary_slicer_fb_0 = digital.binary_slicer_fb()
         self.dc_blocker_xx_0 = filter.dc_blocker_ff(8*SYMB_LEN, True)
-        self.channels_channel_model_0 = channels.channel_model(
-        	noise_voltage=0.1,
-        	frequency_offset=100,
-        	epsilon=1.0,
-        	taps=(1.0 + 1.0j, ),
-        	noise_seed=0,
-        	block_tags=False
-        )
         self.blocks_vector_source_x_1 = blocks.vector_source_f((1,0,1,0,1,0,0,0,1,1,1,1,0,0,1,0,1,1,1,0,0,0,1,1,0,0,1,1,0,1,0), True, 1, [])
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_tagged_stream_to_pdu_0 = blocks.tagged_stream_to_pdu(blocks.byte_t, 'packet_len')
         self.blocks_repeat_0 = blocks.repeat(gr.sizeof_float*1, SYMB_LEN)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((IF_SPACING, ))
         self.blocks_moving_average_xx_0 = blocks.moving_average_ff(SYMB_LEN, 0.01, 4000, 1)
+        self.blocks_message_debug_0 = blocks.message_debug()
         self.blocks_file_sink_0_1_0 = blocks.file_sink(gr.sizeof_gr_complex*1, 'C:\\Users\\buer9\\Google Drive\\ELSYS\\Student_defined_project\\Gnu_radio\\Ground_Station\\file_sink\\receive_complex.bin', False)
         self.blocks_file_sink_0_1_0.set_unbuffered(False)
         self.blocks_file_sink_0_1 = blocks.file_sink(gr.sizeof_float*1, 'C:\\Users\\buer9\\Google Drive\\ELSYS\\Student_defined_project\\Gnu_radio\\Ground_Station\\file_sink\\receive_float.bin', False)
@@ -193,6 +167,7 @@ class X_FSK(gr.top_block, Qt.QWidget):
         self.blocks_add_const_vxx_0 = blocks.add_const_vff((IF_FREQ_BIAS, ))
         self.analog_quadrature_demod_cf_0 = analog.quadrature_demod_cf(samp_rate/(2*math.pi*3e3/8.0))
         self.analog_pwr_squelch_xx_0 = analog.pwr_squelch_cc(-40, 1e-4, 0, True)
+        self.analog_phase_modulator_fc_2 = analog.phase_modulator_fc(1)
         self.analog_frequency_modulator_fc_0 = analog.frequency_modulator_fc((2*math.pi)/samp_rate)
 
 
@@ -200,8 +175,9 @@ class X_FSK(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
+        self.msg_connect((self.blocks_tagged_stream_to_pdu_0, 'pdus'), (self.blocks_message_debug_0, 'print_pdu'))
         self.connect((self.analog_frequency_modulator_fc_0, 0), (self.interp_fir_filter_xxx_0, 0))
-        self.connect((self.analog_frequency_modulator_fc_0, 0), (self.qtgui_sink_x_0_0, 0))
+        self.connect((self.analog_phase_modulator_fc_2, 0), (self.qtgui_sink_x_0_0_0_0_0, 0))
         self.connect((self.analog_pwr_squelch_xx_0, 0), (self.analog_quadrature_demod_cf_0, 0))
         self.connect((self.analog_pwr_squelch_xx_0, 0), (self.blocks_file_sink_0_1_0, 0))
         self.connect((self.analog_quadrature_demod_cf_0, 0), (self.dc_blocker_xx_0, 0))
@@ -210,18 +186,17 @@ class X_FSK(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_0_0, 0))
         self.connect((self.blocks_moving_average_xx_0, 0), (self.digital_clock_recovery_mm_xx_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.blocks_add_const_vxx_0, 0))
+        self.connect((self.blocks_repeat_0, 0), (self.analog_phase_modulator_fc_2, 0))
         self.connect((self.blocks_repeat_0, 0), (self.blocks_file_sink_0_0, 0))
         self.connect((self.blocks_repeat_0, 0), (self.blocks_multiply_const_vxx_0, 0))
-        self.connect((self.blocks_throttle_0, 0), (self.channels_channel_model_0, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.interp_fir_filter_xxx_0_0, 0))
         self.connect((self.blocks_vector_source_x_1, 0), (self.blocks_repeat_0, 0))
-        self.connect((self.channels_channel_model_0, 0), (self.interp_fir_filter_xxx_0_0, 0))
         self.connect((self.dc_blocker_xx_0, 0), (self.blocks_moving_average_xx_0, 0))
         self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_0, 0))
         self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_tagged_stream_to_pdu_0, 0))
         self.connect((self.digital_clock_recovery_mm_xx_0, 0), (self.digital_binary_slicer_fb_0, 0))
         self.connect((self.interp_fir_filter_xxx_0, 0), (self.blocks_file_sink_0, 0))
         self.connect((self.interp_fir_filter_xxx_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.interp_fir_filter_xxx_0, 0), (self.qtgui_sink_x_0_0_0_0, 0))
         self.connect((self.interp_fir_filter_xxx_0_0, 0), (self.analog_pwr_squelch_xx_0, 0))
 
     def closeEvent(self, event):
@@ -236,8 +211,7 @@ class X_FSK(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate
         self.set_SYMB_LEN(self.samp_rate/self.SYMB_RATE)
         self.qtgui_time_sink_x_0_0.set_samp_rate(self.samp_rate)
-        self.qtgui_sink_x_0_0_0_0.set_frequency_range(0, self.samp_rate)
-        self.qtgui_sink_x_0_0.set_frequency_range(0, self.samp_rate)
+        self.qtgui_sink_x_0_0_0_0_0.set_frequency_range(0, self.samp_rate)
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
         self.analog_quadrature_demod_cf_0.set_gain(self.samp_rate/(2*math.pi*3e3/8.0))
         self.analog_frequency_modulator_fc_0.set_sensitivity((2*math.pi)/self.samp_rate)
