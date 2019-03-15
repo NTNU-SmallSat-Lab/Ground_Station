@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Fri Mar 15 10:16:17 2019
+# Generated: Fri Mar 15 13:13:53 2019
 ##################################################
 
 if __name__ == '__main__':
@@ -68,6 +68,54 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
+        self.qtgui_time_sink_x_0_0_0 = qtgui.time_sink_f(
+        	1024, #size
+        	samp_rate, #samp_rate
+        	"", #name
+        	1 #number of inputs
+        )
+        self.qtgui_time_sink_x_0_0_0.set_update_time(0.10)
+        self.qtgui_time_sink_x_0_0_0.set_y_axis(-1, 1)
+
+        self.qtgui_time_sink_x_0_0_0.set_y_label('Amplitude', "")
+
+        self.qtgui_time_sink_x_0_0_0.enable_tags(-1, True)
+        self.qtgui_time_sink_x_0_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
+        self.qtgui_time_sink_x_0_0_0.enable_autoscale(False)
+        self.qtgui_time_sink_x_0_0_0.enable_grid(False)
+        self.qtgui_time_sink_x_0_0_0.enable_axis_labels(True)
+        self.qtgui_time_sink_x_0_0_0.enable_control_panel(False)
+        self.qtgui_time_sink_x_0_0_0.enable_stem_plot(False)
+
+        if not True:
+          self.qtgui_time_sink_x_0_0_0.disable_legend()
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "green", "black", "cyan",
+                  "magenta", "yellow", "dark red", "dark green", "blue"]
+        styles = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        markers = [-1, -1, -1, -1, -1,
+                   -1, -1, -1, -1, -1]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+
+        for i in xrange(1):
+            if len(labels[i]) == 0:
+                self.qtgui_time_sink_x_0_0_0.set_line_label(i, "Data {0}".format(i))
+            else:
+                self.qtgui_time_sink_x_0_0_0.set_line_label(i, labels[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_width(i, widths[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_color(i, colors[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_style(i, styles[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_marker(i, markers[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_time_sink_x_0_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0_0.pyqwidget(), Qt.QWidget)
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_0_0_win)
         self.qtgui_edit_box_msg_0 = qtgui.edit_box_msg(qtgui.STRING, '', '', False, False, '')
         self._qtgui_edit_box_msg_0_win = sip.wrapinstance(self.qtgui_edit_box_msg_0.pyqwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_edit_box_msg_0_win)
@@ -77,13 +125,12 @@ class top_block(gr.top_block, Qt.QWidget):
         self.digital_hdlc_deframer_bp_0 = digital.hdlc_deframer_bp(1, 500)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_pdu_to_tagged_stream_0 = blocks.pdu_to_tagged_stream(blocks.byte_t, 'packet_len')
-        self.blocks_pack_k_bits_bb_0 = blocks.pack_k_bits_bb(8)
+        self.blocks_pack_k_bits_bb_0 = blocks.pack_k_bits_bb(1)
         self.blocks_null_source_0 = blocks.null_source(gr.sizeof_gr_complex*1)
         self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_gr_complex*1)
         self.blocks_message_strobe_0 = blocks.message_strobe(pmt.intern("TEST"), 1000)
         self.blocks_message_debug_0 = blocks.message_debug()
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, 'C:\\Users\\mikol\\OneDrive\\Desktop\\Skole\\Semester 7\\Prosjekt\\AX.25_TEST\\receive_float.bin', False)
-        self.blocks_file_sink_0.set_unbuffered(False)
+        self.blocks_char_to_float_0_0 = blocks.char_to_float(1, 1)
 
 
 
@@ -95,8 +142,9 @@ class top_block(gr.top_block, Qt.QWidget):
         self.msg_connect((self.epy_block_0, 'msg_out'), (self.blocks_pdu_to_tagged_stream_0, 'pdus'))
         self.msg_connect((self.epy_block_0, 'msg_out'), (self.digital_hdlc_framer_pb_0, 'in'))
         self.msg_connect((self.qtgui_edit_box_msg_0, 'msg'), (self.blocks_message_strobe_0, 'set_msg'))
+        self.connect((self.blocks_char_to_float_0_0, 0), (self.qtgui_time_sink_x_0_0_0, 0))
         self.connect((self.blocks_null_source_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.blocks_pack_k_bits_bb_0, 0), (self.blocks_file_sink_0, 0))
+        self.connect((self.blocks_pack_k_bits_bb_0, 0), (self.blocks_char_to_float_0_0, 0))
         self.connect((self.blocks_pdu_to_tagged_stream_0, 0), (self.epy_block_1, 0))
         self.connect((self.blocks_throttle_0, 0), (self.blocks_null_sink_0, 0))
         self.connect((self.digital_hdlc_framer_pb_0, 0), (self.blocks_pack_k_bits_bb_0, 0))
@@ -112,6 +160,7 @@ class top_block(gr.top_block, Qt.QWidget):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
+        self.qtgui_time_sink_x_0_0_0.set_samp_rate(self.samp_rate)
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
 
 
