@@ -113,7 +113,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>28800</value>
+      <value>-1.5</value>
     </param>
   </block>
   <block>
@@ -416,7 +416,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 772)</value>
+      <value>(264, 772)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -459,11 +459,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(584, 312)</value>
+      <value>(616, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -718,11 +718,11 @@
     </param>
     <param>
       <key>file</key>
-      <value>C:\Users\mikol\OneDrive\Desktop\Skole\Semester 7\Prosjekt\Software\Ground_Station\Ground_Station\Received_data.bin</value>
+      <value>C:\Users\buer9\Google Drive\ELSYS\Student_defined_project\Gnu_radio\Ground_Station\file_sink\Received_data.bin</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 652)</value>
+      <value>(688, 676)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -761,42 +761,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(864, 616)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_message_debug_0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_message_debug</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
       <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1008, 0)</value>
+      <value>(992, 24)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -827,7 +796,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 536)</value>
+      <value>(256, 552)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -964,7 +933,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 668)</value>
+      <value>(448, 692)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1160,7 +1129,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1223,7 +1192,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>2</value>
+      <value>1</value>
     </param>
     <param>
       <key>epsilon</key>
@@ -1235,7 +1204,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1072, 680)</value>
+      <value>(1064, 840)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1337,7 +1306,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(128, 776)</value>
+      <value>(48, 776)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1439,7 +1408,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(800, 84)</value>
+      <value>(800, 76)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1486,7 +1455,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(280, 684)</value>
+      <value>(264, 684)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1529,7 +1498,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>frame_tag_name</key>
@@ -1537,7 +1506,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(648, 212)</value>
+      <value>(432, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1674,11 +1643,11 @@ class msg_block(gr.basic_block):  # other base classes are basic_block, decim_bl
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(480, 216)</value>
+      <value>(264, 216)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1687,116 +1656,6 @@ class msg_block(gr.basic_block):  # other base classes are basic_block, decim_bl
     <param>
       <key>id</key>
       <value>epy_block_0_0</value>
-    </param>
-  </block>
-  <block>
-    <key>interp_fir_filter_xxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(784, 468)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>interp_fir_filter_xxx_0</value>
-    </param>
-    <param>
-      <key>interp</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samp_delay</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value>-0.00013469795521814376, 0.0001308875362155959, -0.00011044950952054933, 7.473641016986221e-05, -2.6959885872201994e-05, -2.8064707294106483e-05, 8.431650348939002e-05, -0.00013509293785318732, 0.00017365286475978792, -0.00019396768766455352, 0.00019153871107846498, -0.00016419168969150633, 0.00011271163384662941, -4.115998308407143e-05, -4.3259184167254716e-05, 0.00013084275997243822, -0.00021049147471785545, 0.000271111581241712, -0.00030308208079077303, 0.0002995455579366535, -0.0002573419187683612, 0.00017750899132806808, -6.538065645145252e-05, -6.96249189786613e-05, 0.0002144459867849946, -0.00035304095945321023, 0.00046736918739043176, -0.0005388417048379779, 0.0005503593711182475, -0.0004889002302661538, 0.0003483797481749207, -0.0001322634780080989, -0.00014472758630290627, 0.00045642597251571715, -0.0007668702164664865, 0.001033683423884213, -0.0012125809444114566, 0.0012620714260265231, -0.001147374277934432, 0.0008429177687503397, -0.00033344238181598485, -0.00038543171831406653, 0.0013055375311523676, -0.0024011905770748854, 0.0036183202173560858, -0.004854370374232531, 0.005923138931393623, -0.006490578409284353, 0.005942380055785179, -0.003061555325984955, -0.004920072853565216, 0.025858381763100624, -0.09178953617811203, 0.48881328105926514, 1.1650420427322388, 0.48881328105926514, -0.09178953617811203, 0.025858381763100624, -0.004920072853565216, -0.003061555325984955, 0.005942380055785179, -0.006490578409284353, 0.005923138931393623, -0.004854370374232531, 0.0036183202173560858, -0.0024011905770748854, 0.0013055375311523676, -0.00038543171831406653, -0.00033344238181598485, 0.0008429177687503397, -0.001147374277934432, 0.0012620714260265231, -0.0012125809444114566, 0.001033683423884213, -0.0007668702164664865, 0.00045642597251571715, -0.00014472758630290627, -0.0001322634780080989, 0.0003483797481749207, -0.0004889002302661538, 0.0005503593711182475, -0.0005388417048379779, 0.00046736918739043176, -0.00035304095945321023, 0.0002144459867849946, -6.96249189786613e-05, -6.538065645145252e-05, 0.00017750899132806808, -0.0002573419187683612, 0.0002995455579366535, -0.00030308208079077303, 0.000271111581241712, -0.00021049147471785545, 0.00013084275997243822, -4.3259184167254716e-05, -4.115998308407143e-05, 0.00011271163384662941, -0.00016419168969150633, 0.00019153871107846498, -0.00019396768766455352, 0.00017365286475978792, -0.00013509293785318732, 8.431650348939002e-05, -2.8064707294106483e-05, -2.6959885872201994e-05, 7.473641016986221e-05, -0.00011044950952054933, 0.0001308875362155959, -0.00013469795521814376</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>ccc</value>
-    </param>
-  </block>
-  <block>
-    <key>interp_fir_filter_xxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(960, 860)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>180</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>interp_fir_filter_xxx_0_0</value>
-    </param>
-    <param>
-      <key>interp</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samp_delay</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value>-0.00013469795521814376, 0.0001308875362155959, -0.00011044950952054933, 7.473641016986221e-05, -2.6959885872201994e-05, -2.8064707294106483e-05, 8.431650348939002e-05, -0.00013509293785318732, 0.00017365286475978792, -0.00019396768766455352, 0.00019153871107846498, -0.00016419168969150633, 0.00011271163384662941, -4.115998308407143e-05, -4.3259184167254716e-05, 0.00013084275997243822, -0.00021049147471785545, 0.000271111581241712, -0.00030308208079077303, 0.0002995455579366535, -0.0002573419187683612, 0.00017750899132806808, -6.538065645145252e-05, -6.96249189786613e-05, 0.0002144459867849946, -0.00035304095945321023, 0.00046736918739043176, -0.0005388417048379779, 0.0005503593711182475, -0.0004889002302661538, 0.0003483797481749207, -0.0001322634780080989, -0.00014472758630290627, 0.00045642597251571715, -0.0007668702164664865, 0.001033683423884213, -0.0012125809444114566, 0.0012620714260265231, -0.001147374277934432, 0.0008429177687503397, -0.00033344238181598485, -0.00038543171831406653, 0.0013055375311523676, -0.0024011905770748854, 0.0036183202173560858, -0.004854370374232531, 0.005923138931393623, -0.006490578409284353, 0.005942380055785179, -0.003061555325984955, -0.004920072853565216, 0.025858381763100624, -0.09178953617811203, 0.48881328105926514, 1.1650420427322388, 0.48881328105926514, -0.09178953617811203, 0.025858381763100624, -0.004920072853565216, -0.003061555325984955, 0.005942380055785179, -0.006490578409284353, 0.005923138931393623, -0.004854370374232531, 0.0036183202173560858, -0.0024011905770748854, 0.0013055375311523676, -0.00038543171831406653, -0.00033344238181598485, 0.0008429177687503397, -0.001147374277934432, 0.0012620714260265231, -0.0012125809444114566, 0.001033683423884213, -0.0007668702164664865, 0.00045642597251571715, -0.00014472758630290627, -0.0001322634780080989, 0.0003483797481749207, -0.0004889002302661538, 0.0005503593711182475, -0.0005388417048379779, 0.00046736918739043176, -0.00035304095945321023, 0.0002144459867849946, -6.96249189786613e-05, -6.538065645145252e-05, 0.00017750899132806808, -0.0002573419187683612, 0.0002995455579366535, -0.00030308208079077303, 0.000271111581241712, -0.00021049147471785545, 0.00013084275997243822, -4.3259184167254716e-05, -4.115998308407143e-05, 0.00011271163384662941, -0.00016419168969150633, 0.00019153871107846498, -0.00019396768766455352, 0.00017365286475978792, -0.00013509293785318732, 8.431650348939002e-05, -2.8064707294106483e-05, -2.6959885872201994e-05, 7.473641016986221e-05, -0.00011044950952054933, 0.0001308875362155959, -0.00013469795521814376</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>ccc</value>
     </param>
   </block>
   <block>
@@ -1815,11 +1674,11 @@ class msg_block(gr.basic_block):  # other base classes are basic_block, decim_bl
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(40, 176)</value>
+      <value>(40, 184)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -2433,7 +2292,19 @@ class msg_block(gr.basic_block):  # other base classes are basic_block, decim_bl
   </block>
   <connection>
     <source_block_id>analog_frequency_modulator_fc_0</source_block_id>
-    <sink_block_id>interp_fir_filter_xxx_0</sink_block_id>
+    <sink_block_id>blocks_file_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>analog_frequency_modulator_fc_0</source_block_id>
+    <sink_block_id>blocks_throttle_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>analog_frequency_modulator_fc_0</source_block_id>
+    <sink_block_id>qtgui_sink_x_0_0_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -2517,12 +2388,6 @@ class msg_block(gr.basic_block):  # other base classes are basic_block, decim_bl
   </connection>
   <connection>
     <source_block_id>blocks_tagged_stream_to_pdu_1</source_block_id>
-    <sink_block_id>blocks_message_debug_0</sink_block_id>
-    <source_key>pdus</source_key>
-    <sink_key>print_pdu</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_tagged_stream_to_pdu_1</source_block_id>
     <sink_block_id>blocks_pdu_to_tagged_stream_0</sink_block_id>
     <source_key>pdus</source_key>
     <sink_key>pdus</sink_key>
@@ -2541,7 +2406,7 @@ class msg_block(gr.basic_block):  # other base classes are basic_block, decim_bl
   </connection>
   <connection>
     <source_block_id>channels_channel_model_0</source_block_id>
-    <sink_block_id>interp_fir_filter_xxx_0_0</sink_block_id>
+    <sink_block_id>analog_pwr_squelch_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -2610,30 +2475,6 @@ class msg_block(gr.basic_block):  # other base classes are basic_block, decim_bl
     <sink_block_id>digital_hdlc_framer_pb_0</sink_block_id>
     <source_key>msg_out</source_key>
     <sink_key>in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>interp_fir_filter_xxx_0</source_block_id>
-    <sink_block_id>blocks_file_sink_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>interp_fir_filter_xxx_0</source_block_id>
-    <sink_block_id>blocks_throttle_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>interp_fir_filter_xxx_0</source_block_id>
-    <sink_block_id>qtgui_sink_x_0_0_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>interp_fir_filter_xxx_0_0</source_block_id>
-    <sink_block_id>analog_pwr_squelch_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>qtgui_edit_box_msg_0</source_block_id>
